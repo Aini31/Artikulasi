@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articulation</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/index.css')}}"/>
+</head>
+<body>
+    <header>
+        <div class="jumbotron">
+            <h2>  Articulation </h2>
+            <p>Lets Speak and Check Your Articulation</p>
+            </div>
+    </header>
+    <nav>
+        <div class="beranda">
+            <div class="logo"><a href=''>Articulation</a></div>
+            <div class="menu">
+                <a href="#" class="tombol-menu">
+                    <span class="garis"></span>
+                    <span class="garis"></span>
+                    <span class="garis"></span>
+                </a>
+                <ul>
+                    <li><a href="#aboutus">About Us</a></li>
+                    <li><a href="#product">Product</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <div class="beranda">
+            <section id="aboutus">
+                <div class="bagianatas">
+                    <p class="details">About Us</p>
+                    <h3>Let Us Speaking</h3>
+                    <p>Public Speaking is becoming one of the most needed skills for people.<br>
+                    When you speak, your need a clear Articulation for a clear communication and to transform your information<br>
+                    Articulation is an app where you can check your Articulation when you Speak, Is it clear?</p>
+                    <p>Check Now</p>
+                </div>
+            <img src="https://img.freepik.com/free-vector/smiling-man-talking-loudspeaker-monitor-social-media-computer-online-flat-vector-illustration-communication-digital-technology_74855-13238.jpg?t=st=1652688358~exp=1652688958~hmac=609f8aab3f6da7c2dd998f43c05bbac56aee4b1614c0be9d0c1cf9c59f1b50b3&w=900">
+            </section>
+    
+
+        <section id="product" class="card">
+            <img src="https://img.freepik.com/free-vector/opinion-concept-illustration_114360-4723.jpg?t=st=1652691989~exp=1652692589~hmac=c1d79a1755a83494a3e8d7a73590b7ae6b240483e2bfdce2b5cb32f9727bd0d1&w=740">
+            <div class="bagianatas">
+                <h3>Check It Out</h3>
+                <p> You can Upload your file in here :</p>
+                        <form method="POST" role="form" enctype=multipart/form-data>
+                            <div class="form-group">
+                                <label for="upload">Input Your Audio File : </label>
+                                    <input type="file" name="file">
+                                    <br>
+                                    <button type="submit" value="Check">CHECK</button>
+                            </div>
+                            {% if transcript != "" %}
+                            <div id="hasiltext">
+                                <h3> Teks Hasil Audio </h3>
+                                <p> Yang Kamu Bicarakan Adalah : </p>
+                                <p>{{transcript}}</p>
+                            </div>
+                            {% endif %}
+                        </form>
+            </div>
+        </section>
+
+    <footer class="copyright">
+            &copy; 2022. <b>Articulation</b> All Rights Reserved.
+    </footer>
+    
+</body>
+</html>
